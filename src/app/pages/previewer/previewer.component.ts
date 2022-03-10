@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { GithubMarkdown } from './markdown/github.markdown';
 
 @Component({
   selector: 'app-previewer',
   templateUrl: './previewer.component.html',
   styleUrls: ['./previewer.component.scss']
 })
-export class PreviewerComponent implements OnInit {
+export class PreviewerComponent {
 
-  constructor() { }
+  file: string = ''
 
-  ngOnInit(): void {
+  constructor() { 
+    this.file = GithubMarkdown
   }
-
 }

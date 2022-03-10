@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/editor/editor-routing.module').then(r => r.EditorRoutingModule)
   }, {
     path: 'visualizar',
-    loadChildren: () => import('./pages/editor/editor-routing.module').then(r => r.EditorRoutingModule)
+    loadChildren: () => import('./pages/previewer/previewer-routing.module').then(r => r.PreviewerRoutingModule)
   }
 ];
 
