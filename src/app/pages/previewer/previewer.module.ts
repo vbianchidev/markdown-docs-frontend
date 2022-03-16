@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule, SecurityContext } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterModule, RouterStateSnapshot } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
 
+import { PostService } from '../../core/services/previewer.service';
 import { PreviewerRoutingModule } from './previewer-routing.module';
 import { PreviewerComponent } from './previewer.component';
-import { PreviewerService } from './previewer.service';
 
 
 @NgModule({
@@ -21,7 +21,7 @@ import { PreviewerService } from './previewer.service';
     MarkdownModule.forRoot({ loader: HttpClient,  sanitize: SecurityContext.NONE })
   ],
   providers: [
-    PreviewerService
+    PostService
   ]
 })
 export class PreviewerModule { }

@@ -1,22 +1,21 @@
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { GithubMarkdown } from '../../markdown/github.markdown';
-import { PreviewerService } from './previewer.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Post } from 'src/app/core/interfaces/post.interface';
 
 @Component({
   selector: 'app-previewer',
   templateUrl: './previewer.component.html',
   styleUrls: ['./previewer.component.scss']
 })
-export class PreviewerComponent {
+export class PreviewerComponent implements OnInit {
   
-  file?: any;
+  post?: Post;
 
-  constructor(public _service: PreviewerService) { 
-    _service.getOneMarkdown(1).subscribe(
-      (value) => {
-        this.file = value.text;
-      }
-    )
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    const resolve = this.route.snapshot.data;
+    this.post = resolve['previewer'];
+    console.log(this.post as Post)
   }
 }

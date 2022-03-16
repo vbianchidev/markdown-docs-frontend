@@ -1,9 +1,16 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { PreviewerComponent } from "./previewer.component";
+import { PreviewerResolver } from "./previewer.resolver";
 
 const routes: Routes = [
-  { path: '', component: PreviewerComponent }
+  { 
+    path: ':slug', 
+    component: PreviewerComponent,
+    resolve: {
+      previewer: PreviewerResolver
+    }
+  }
 ];
 
 @NgModule({

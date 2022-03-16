@@ -1,2 +1,7 @@
-<markdown [data]="file.text">
+<markdown 
+  [data]="post?.markdown">
 </markdown>
+
+<pre>
+  {{ post | json}}
+</pre>
