@@ -10,13 +10,12 @@ import { PageService } from '../services/http/page.service';
 })
 export class PostResolver implements Resolve<Page> {
 
-  constructor(private postService: PageService) {}
+  constructor(private pageService: PageService) {}
 
   resolve(
     route: ActivatedRouteSnapshot, 
     state: RouterStateSnapshot
   ): Observable<Page> | Promise<Page> | Page {
-    console.log(route.paramMap.get('slug'))
-    return this.postService.getBySlug(route.paramMap.get('slug'));
+    return this.pageService.getBySlug(route.paramMap.get('slug'));
   }
 }

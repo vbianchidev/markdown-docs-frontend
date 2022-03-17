@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
-import { MatDrawerMode, MatSidenav } from '@angular/material/sidenav';
-import { delay, map, Observable, startWith } from 'rxjs';
+import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
+import { delay, startWith } from 'rxjs';
 import { Menu } from 'src/app/core/interfaces/menu.interface';
 import { MenuService } from 'src/app/core/services/http/menu.service';
 import { SidenavService } from 'src/app/core/services/ui/sidenav.service';
@@ -10,7 +10,7 @@ import { SidenavService } from 'src/app/core/services/ui/sidenav.service';
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss']
 })
-export class MenuComponent implements OnInit, AfterViewInit {
+export class MenuComponent implements AfterViewInit {
   @Input()
   isHandset: boolean;
 
@@ -29,11 +29,6 @@ export class MenuComponent implements OnInit, AfterViewInit {
       });
   }
 
-  ngOnInit(): void {
-    
-    console.log(this.menus)
-  }
-
   ngAfterViewInit(): void {
     this.sidenavService.sidenavToggleSubject
       .pipe(
@@ -41,7 +36,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
         delay(0)
       )
       .subscribe(()=> {
-        this.drawer.open();
+        this.drawer.toggle();
       });
   }
 }
