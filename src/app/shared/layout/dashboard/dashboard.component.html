@@ -1,22 +1,14 @@
-<mat-sidenav-container class="sidenav-container">
-
-  <!-- Menu -->
-  <app-menu
+<!-- Menu -->
+<app-sidenav
+  [isHandset]="isHandset$ | async">
+  
+  <!-- Toolbar -->
+  <app-toolbar
     [isHandset]="isHandset$ | async">
-  </app-menu>
-
-  <mat-sidenav-content>
-    
-    <!-- Toolbar -->
-    <app-toolbar
-      [isHandset]="isHandset$ | async">
-    </app-toolbar>
-
-    <!-- Main content -->
-    <div class="main-content">
-      <ng-content></ng-content>
-    </div>
-
-  </mat-sidenav-content>
-
-</mat-sidenav-container>
+  </app-toolbar>
+  
+  <!-- Main content -->
+  <div class="main-content">
+    <ng-content></ng-content>
+  </div>
+</app-sidenav>

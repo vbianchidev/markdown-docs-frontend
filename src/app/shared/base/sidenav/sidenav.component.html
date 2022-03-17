@@ -1,16 +1,28 @@
-<mat-sidenav 
-  #sidenav 
-  fixedInViewport
-  class="sidenav" 
-  [attr.role]="(isHandset) ? 'dialog' : 'navigation'"
-  [mode]="(isHandset) ? 'over' : 'side'"
-  [opened]="(isHandset) === false">
 
-  <mat-toolbar>Menu</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav 
+    #drawer
+    fixedInViewport
+    class="sidenav"
+    [attr.role]="(this.isHandset) ? 'dialog' : 'navigation'"
+    [mode]="(this.isHandset) ? 'over' : 'side'"
+    [opened]="(this.isHandset) === false"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
 
-  <mat-nav-list>
-    <a mat-list-item href="#">Link 1</a>
-    <a mat-list-item href="#">Link 2</a>
-    <a mat-list-item href="#">Link 3</a>
-  </mat-nav-list>
-</mat-sidenav>
+    <mat-nav-list *ngIf="menus.length > 0">
+      <a mat-list-item href="#" *ngFor="let menu of menus">
+        <mat-icon *ngIf="menu.matIcon !== null" mat-list-icon>{{ menu.matIcon }}</mat-icon>
+        {{ menu.name }}
+      </a>
+    </mat-nav-list>
+    <pre>
+      {{ menus | json}}
+    </pre>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+    
+</mat-sidenav-container>
