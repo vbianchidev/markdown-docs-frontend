@@ -6,13 +6,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { SidenavService } from 'src/app/core/services/ui/sidenav.service';
 
-import { MenuComponent } from './menu/menu.component';
+import { MenuComponent } from './sidenav/sidenav.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 
 
 @NgModule({
-  declarations: [MenuComponent],
+  declarations: [
+    MenuComponent, 
+    ToolbarComponent
+  ],
   imports: [
     CommonModule,
     LayoutModule,
@@ -23,7 +28,11 @@ import { MenuComponent } from './menu/menu.component';
     MatListModule
   ], 
   exports: [
-    MenuComponent
+    MenuComponent,
+    ToolbarComponent
+  ], 
+  providers:[
+    SidenavService
   ]
 })
 export class BaseModule { }

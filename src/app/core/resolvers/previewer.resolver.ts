@@ -3,7 +3,7 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 import { Observable } from 'rxjs';
 import { Page } from 'src/app/core/interfaces/page.interface';
 
-import { PageService } from '../services/page.service';
+import { PageService } from '../services/http/page.service';
 
 @Injectable({
   providedIn: 'root'

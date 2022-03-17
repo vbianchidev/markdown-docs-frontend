@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
 import { LayoutsModule } from 'src/app/shared/layout/layout.module';
 
-import { PageService } from '../../core/services/page.service';
+import { PageService } from '../../core/services/http/page.service';
 import { PreviewerRoutingModule } from './previewer-routing.module';
 import { PreviewerComponent } from './previewer.component';
 

@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { BaseModule } from '../base/base.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -21,7 +22,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    LayoutModule
+    MatSidenavModule,
+    LayoutModule,
+    BaseModule
   ],
   exports: [DashboardComponent]
 })

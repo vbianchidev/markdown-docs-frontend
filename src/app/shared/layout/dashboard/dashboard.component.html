@@ -1,5 +1,22 @@
-<app-menu>
-  <ng-content></ng-content>
-</app-menu>
+<mat-sidenav-container class="sidenav-container">
 
+  <!-- Menu -->
+  <app-menu
+    [isHandset$]="isHandset$">
+  </app-menu>
 
+  <mat-sidenav-content>
+    
+    <!-- Toolbar -->
+    <app-toolbar
+      [isHandset$]="isHandset$">
+    </app-toolbar>
+
+    <!-- Main content -->
+    <div class="main-content">
+      <ng-content></ng-content>
+    </div>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

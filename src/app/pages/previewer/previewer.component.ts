@@ -16,6 +16,5 @@ export class PreviewerComponent implements OnInit {
   ngOnInit(): void {
     const resolve = this.route.snapshot.data;
     this.post = resolve['previewer'];
-    console.log(this.post as Page)
   }
 }

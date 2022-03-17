@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { makeUrlId } from 'src/app/core/helpers/url.helper';
 
-import { Page } from '../interfaces/page.interface';
+import { Page } from '../../interfaces/page.interface';
 
 
 @Injectable({
