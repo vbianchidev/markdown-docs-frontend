@@ -2,14 +2,14 @@
 
   <!-- Menu -->
   <app-menu
-    [isHandset$]="isHandset$">
+    [isHandset]="isHandset$ | async">
   </app-menu>
 
   <mat-sidenav-content>
     
     <!-- Toolbar -->
     <app-toolbar
-      [isHandset$]="isHandset$">
+      [isHandset]="isHandset$ | async">
     </app-toolbar>
 
     <!-- Main content -->

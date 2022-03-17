@@ -9,7 +9,7 @@ import { SidenavService } from 'src/app/core/services/ui/sidenav.service';
 })
 export class ToolbarComponent {
   @Input()
-  isHandset$?: Observable<boolean>;
+  isHandset?: boolean;
 
   constructor(private sideNavService: SidenavService) {}
 

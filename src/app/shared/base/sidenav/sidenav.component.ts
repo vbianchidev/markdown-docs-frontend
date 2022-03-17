@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { Observable, startWith } from 'rxjs';
+import { delay, Observable, startWith } from 'rxjs';
 import { SidenavService } from 'src/app/core/services/ui/sidenav.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { SidenavService } from 'src/app/core/services/ui/sidenav.service';
 })
 export class MenuComponent implements AfterViewInit {
   @Input()
-  isHandset$?: Observable<boolean>;
+  isHandset?: boolean;
 
   @ViewChild('sidenav') 
   sidenav: MatSidenav;
@@ -19,9 +19,14 @@ export class MenuComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.sidenavService.sidenavToggleSubject
-      .pipe(startWith(null))
+      .pipe(
+        startWith(null),
+        delay(0)
+      )
       .subscribe(()=> {
         this.sidenav.toggle();
       });
-  } 
+  }
+
+  opened() {}
 }
