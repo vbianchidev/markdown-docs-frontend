@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
 import { LayoutsModule } from 'src/app/shared/layout/layout.module';
 
-import { PostService } from '../../core/services/previewer.service';
+import { PageService } from '../../core/services/page.service';
 import { PreviewerRoutingModule } from './previewer-routing.module';
 import { PreviewerComponent } from './previewer.component';
 
@@ -23,7 +23,7 @@ import { PreviewerComponent } from './previewer.component';
     MarkdownModule.forRoot({ loader: HttpClient,  sanitize: SecurityContext.NONE })
   ],
   providers: [
-    PostService
+    PageService
   ]
 })
 export class PreviewerModule { }

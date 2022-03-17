@@ -3,18 +3,18 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { makeUrlId } from 'src/app/core/helpers/url.helper';
 
-import { Post } from '../interfaces/post.interface';
+import { Page } from '../interfaces/page.interface';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class PostService {
+export class PageService {
   private readonly _url: string = "http://localhost:3000/post"
 
   constructor(private http: HttpClient) { }
 
-  public getBySlug(id: string | null): Observable<Post> {
-    return this.http.get<Post>(makeUrlId(this._url, `find/${id}`));
+  getBySlug(id: string | null): Observable<Page> {
+    return this.http.get<Page>(makeUrlId(this._url, `find/${id}`));
   }
 }

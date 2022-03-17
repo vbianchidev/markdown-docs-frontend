@@ -1,14 +1,14 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { PreviewerComponent } from "./previewer.component";
-import { PreviewerResolver } from "./previewer.resolver";
+import { PostResolver } from "../../core/resolvers/previewer.resolver";
 
 const routes: Routes = [
   { 
     path: ':slug', 
     component: PreviewerComponent,
     resolve: {
-      previewer: PreviewerResolver
+      previewer: PostResolver
     }
   }
 ];

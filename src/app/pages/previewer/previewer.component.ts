@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Post } from 'src/app/core/interfaces/post.interface';
+import { Page } from 'src/app/core/interfaces/page.interface';
 
 @Component({
   selector: 'app-previewer',
@@ -9,13 +9,13 @@ import { Post } from 'src/app/core/interfaces/post.interface';
 })
 export class PreviewerComponent implements OnInit {
   
-  post?: Post;
+  post?: Page;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const resolve = this.route.snapshot.data;
     this.post = resolve['previewer'];
-    console.log(this.post as Post)
+    console.log(this.post as Page)
   }
 }

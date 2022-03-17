@@ -1,4 +1,4 @@
-export interface baseInterface {
+export interface BaseInterface {
   _id: string;
   __v: number;
   createdAt?: string;
