@@ -18,7 +18,7 @@ export class MenuComponent implements AfterViewInit {
   constructor(private sidenavService: SidenavService) { }
 
   ngAfterViewInit() {
-    this.sidenavService.sideNavToggleSubject
+    this.sidenavService.sidenavToggleSubject
       .pipe(startWith(null))
       .subscribe(()=> {
         this.sidenav.toggle();
