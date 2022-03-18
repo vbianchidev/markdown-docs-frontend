@@ -6,8 +6,8 @@ import { MarkdownModule } from 'ngx-markdown';
 import { LayoutsModule } from 'src/app/shared/layout/layout.module';
 
 import { PageService } from '../../core/services/http/page.service';
-import { PreviewerRoutingModule } from './previewer-routing.module';
-import { PreviewerComponent } from './previewer.component';
+import { PreviewerRoutingModule } from './pages/previewer-routing.module';
+import { PreviewerComponent } from './pages/previewer/previewer.component';
 
 
 @NgModule({

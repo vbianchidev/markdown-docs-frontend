@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomepageComponent } from './homepage.component';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HomepageRoutingModule } from './homepage-routing.module';
 
+import { HomeComponent } from './pages/home/home.component';
+import { HomepageRoutingModule } from './pages/homepage-routing.module';
 
 
 @NgModule({
   declarations: [
-    HomepageComponent
+    HomeComponent
   ],
   imports: [
     CommonModule,

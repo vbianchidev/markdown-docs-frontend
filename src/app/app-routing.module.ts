@@ -5,13 +5,13 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/homepage/homepage-routing.module').then(r => r.HomepageRoutingModule)
+    loadChildren: () => import('./modules/homepage/pages/homepage-routing.module').then(r => r.HomepageRoutingModule)
   }, {
     path: 'editar',
-    loadChildren: () => import('./pages/editor/editor-routing.module').then(r => r.EditorRoutingModule)
+    loadChildren: () => import('./modules/editor/pages/editor-routing.module').then(r => r.EditorRoutingModule)
   }, {
     path: 'visualizar',
-    loadChildren: () => import('./pages/previewer/previewer-routing.module').then(r => r.PreviewerRoutingModule)
+    loadChildren: () => import('./modules/previewer/pages/previewer-routing.module').then(r => r.PreviewerRoutingModule)
   }
 ];
 

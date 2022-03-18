@@ -8,7 +8,7 @@ import { PageService } from '../services/http/page.service';
 @Injectable({
   providedIn: 'root'
 })
-export class PostResolver implements Resolve<Page> {
+export class PreviewerResolver implements Resolve<Page> {
 
   constructor(private pageService: PageService) {}
 

@@ -17,4 +17,4 @@ import { PreviewerModule } from './previewer/previewer.module';
     EditorModule
   ]
 })
-export class PagesModule { }
+export class ModulesModule { }
