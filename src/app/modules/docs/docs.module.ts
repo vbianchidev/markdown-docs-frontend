@@ -12,12 +12,14 @@ import { DocsPreviewerComponent } from './pages/docs-previewer/docs-previewer.co
 import { PreviewerRoutingModule } from './pages/docs-routing.module';
 import { DocsTableComponent } from './pages/docs-table/docs-table.component';
 import { DocsService } from './services/docs.service';
+import { DatatablebsComponent } from './pages/datatablebs/datatablebs.component';
 
 
 @NgModule({
   declarations: [
     DocsPreviewerComponent,
     DocsTableComponent,
+    DatatablebsComponent,
   ],
   imports: [
     CommonModule,

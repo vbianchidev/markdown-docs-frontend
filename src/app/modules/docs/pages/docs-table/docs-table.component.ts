@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { delay, Observable, startWith } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Doc } from 'src/app/core/interfaces/docs.interface';
 
 import { DocsService } from '../../services/docs.service';
@@ -11,6 +11,7 @@ import { DocsService } from '../../services/docs.service';
 })
 export class DocsTableComponent implements OnInit {
   dataSource: Observable<Doc[]>;
+  
   displayedColumns: string[] = [
     "_id", "title", "slug", "createdAt", "updatedAt", "__v"
   ];

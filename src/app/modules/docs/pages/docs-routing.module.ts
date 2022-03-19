@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { PreviewerResolver } from '../../../core/resolvers/previewer.resolver';
+import { DatatablebsComponent } from './datatablebs/datatablebs.component';
 import { DocsPreviewerComponent } from './docs-previewer/docs-previewer.component';
 import { DocsTableComponent } from './docs-table/docs-table.component';
 
