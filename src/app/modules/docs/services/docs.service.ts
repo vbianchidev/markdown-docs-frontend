@@ -14,6 +14,14 @@ export class DocsService {
 
   constructor(private http: HttpClient) { }
 
+  getAll(): Observable<Doc[]> {
+    return this.http.get<Doc[]>(this._url);
+  }
+
+  getById(id: string | null): Observable<Doc> {
+    return this.http.get<Doc>(makeUrlId(this._url, id));
+  }
+
   getBySlug(id: string | null): Observable<Doc> {
     return this.http.get<Doc>(makeUrlId(this._url, `find/${id}`));
   }

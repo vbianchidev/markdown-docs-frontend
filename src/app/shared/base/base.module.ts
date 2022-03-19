@@ -11,6 +11,10 @@ import { SidenavService } from 'src/app/core/services/ui/sidenav.service';
 import { MenuComponent } from './sidenav/sidenav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ], 
   exports: [
     MenuComponent,
