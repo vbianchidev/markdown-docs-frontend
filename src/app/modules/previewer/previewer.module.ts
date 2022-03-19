@@ -7,7 +7,7 @@ import { LayoutsModule } from 'src/app/shared/layout/layout.module';
 
 import { PageService } from '../../core/services/http/page.service';
 import { PreviewerComponent } from './pages/markdown-previewer/markdown-previewer.component';
-import { PreviewerRoutingModule } from './pages/previewer-routing.module';
+import { PreviewerRoutingModule } from './pages/markdown-routing.module';
 
 
 @NgModule({
