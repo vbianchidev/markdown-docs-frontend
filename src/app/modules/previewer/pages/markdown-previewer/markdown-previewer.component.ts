@@ -4,8 +4,8 @@ import { Page } from 'src/app/core/interfaces/page.interface';
 
 @Component({
   selector: 'app-previewer',
-  templateUrl: './previewer.component.html',
-  styleUrls: ['./previewer.component.scss']
+  templateUrl: './markdown-previewer.component.html',
+  styleUrls: ['./markdown-previewer.component.scss']
 })
 export class PreviewerComponent implements OnInit {
   

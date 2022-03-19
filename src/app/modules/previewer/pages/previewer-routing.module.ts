@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { PreviewerResolver } from '../../../core/resolvers/previewer.resolver';
-import { PreviewerComponent } from './previewer/previewer.component';
+import { PreviewerComponent } from './markdown-previewer/markdown-previewer.component';
 
 const routes: Routes = [
   { 
