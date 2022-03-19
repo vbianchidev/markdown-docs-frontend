@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Observable } from 'rxjs';
 import { SidenavService } from 'src/app/core/services/ui/sidenav.service';
 
 @Component({

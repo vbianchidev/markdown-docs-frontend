@@ -3,14 +3,14 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 import { Observable } from 'rxjs';
 import { Page } from 'src/app/core/interfaces/page.interface';
 
-import { PageService } from '../services/http/page.service';
+import { DocsService } from '../../modules/markdown/services/docs.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PreviewerResolver implements Resolve<Page> {
 
-  constructor(private pageService: PageService) {}
+  constructor(private pageService: DocsService) {}
 
   resolve(
     route: ActivatedRouteSnapshot, 

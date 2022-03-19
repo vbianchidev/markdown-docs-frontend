@@ -12,7 +12,6 @@ import { MenuComponent } from './sidenav/sidenav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
 
-
 @NgModule({
   declarations: [
     MenuComponent, 

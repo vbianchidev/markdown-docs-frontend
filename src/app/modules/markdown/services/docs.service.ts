@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { makeUrlId } from 'src/app/core/helpers/url.helper';
 
-import { Page } from '../../interfaces/page.interface';
+import { Page } from '../../../core/interfaces/page.interface';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class PageService {
+export class DocsService {
   private readonly _url: string = "http://localhost:3000/post"
 
   constructor(private http: HttpClient) { }
