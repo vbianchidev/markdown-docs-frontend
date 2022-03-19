@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Page } from 'src/app/core/interfaces/page.interface';
+import { Doc } from 'src/app/core/interfaces/docs.interface';
+import { DocsService } from 'src/app/modules/docs/services/docs.service';
 
-import { DocsService } from '../../modules/markdown/services/docs.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PreviewerResolver implements Resolve<Page> {
+export class PreviewerResolver implements Resolve<Doc> {
 
-  constructor(private pageService: DocsService) {}
+  constructor(private docsService: DocsService) {}
 
   resolve(
     route: ActivatedRouteSnapshot, 
     state: RouterStateSnapshot
-  ): Observable<Page> | Promise<Page> | Page {
-    return this.pageService.getBySlug(route.paramMap.get('slug'));
+  ): Observable<Doc> | Promise<Doc> | Doc {
+    return this.docsService.getBySlug(route.paramMap.get('slug'));
   }
 }

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { makeUrlId } from 'src/app/core/helpers/url.helper';
 
-import { Page } from '../../../core/interfaces/page.interface';
+import { Doc } from '../../../core/interfaces/docs.interface';
 
 
 @Injectable({
@@ -14,7 +14,7 @@ export class DocsService {
 
   constructor(private http: HttpClient) { }
 
-  getBySlug(id: string | null): Observable<Page> {
-    return this.http.get<Page>(makeUrlId(this._url, `find/${id}`));
+  getBySlug(id: string | null): Observable<Doc> {
+    return this.http.get<Doc>(makeUrlId(this._url, `find/${id}`));
   }
 }

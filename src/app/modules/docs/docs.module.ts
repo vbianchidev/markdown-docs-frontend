@@ -6,13 +6,15 @@ import { MarkdownModule } from 'ngx-markdown';
 import { LayoutsModule } from 'src/app/shared/layout/layout.module';
 
 import { DocsService } from './services/docs.service';
-import { PreviewerComponent } from './pages/markdown-previewer/markdown-previewer.component';
-import { PreviewerRoutingModule } from './pages/markdown-routing.module';
+import { DocsPreviewerComponent } from './pages/docs-previewer/docs-previewer.component';
+import { PreviewerRoutingModule } from './pages/docs-routing.module';
+import { DocsTableComponent } from './pages/docs-table/docs-table.component';
 
 
 @NgModule({
   declarations: [
-    PreviewerComponent
+    DocsPreviewerComponent,
+    DocsTableComponent
   ],
   imports: [
     CommonModule,

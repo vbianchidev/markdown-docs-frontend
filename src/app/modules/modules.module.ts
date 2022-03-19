@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { HomepageModule } from './homepage/homepage.module';
-import { DocsModule } from './markdown/docs.module';
+import { DocsModule } from './docs/docs.module';
+import { HomepageModule } from './home/home.module';
 
 
 @NgModule({

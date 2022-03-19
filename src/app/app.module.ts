@@ -6,7 +6,7 @@ import { MarkdownModule } from 'ngx-markdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PagesModule } from './pages/pages.module';
+import { ModulesModule } from './modules/modules.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { PagesModule } from './pages/pages.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    PagesModule,
+    ModulesModule,
     ReactiveFormsModule
   ],
   providers: [],
