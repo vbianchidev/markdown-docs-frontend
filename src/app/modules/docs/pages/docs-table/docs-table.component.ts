@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Doc } from 'src/app/core/interfaces/docs.interface';
 
-import { DocsService } from '../../services/docs.service';
+import { DocsService } from '../../../../core/services/http/docs.service';
 
 @Component({
   selector: 'app-docs-table',

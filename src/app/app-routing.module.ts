@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DatatablebsComponent } from './modules/docs/pages/datatablebs/datatablebs.component';
 
 
 const routes: Routes = [
@@ -10,15 +9,11 @@ const routes: Routes = [
   }, {
     path: 'docs',
     loadChildren: () => import('./modules/docs/pages/docs-routing.module').then(r => r.PreviewerRoutingModule)
-  }, 
-  {
-    path: 'teste',
-    component: DatatablebsComponent
-  },
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

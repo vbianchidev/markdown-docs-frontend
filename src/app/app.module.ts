@@ -7,6 +7,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ModulesModule } from './modules/modules.module';
+import { LayoutsModule } from './shared/layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ModulesModule } from './modules/modules.module';
   imports: [
     MarkdownModule.forRoot(),
     BrowserModule,
+    LayoutsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ModulesModule,
