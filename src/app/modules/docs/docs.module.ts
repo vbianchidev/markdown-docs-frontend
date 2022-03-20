@@ -9,7 +9,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { LayoutsModule } from 'src/app/shared/layout/layout.module';
 
 import { DocsPreviewerComponent } from './pages/docs-previewer/docs-previewer.component';
-import { PreviewerRoutingModule } from './pages/docs-routing.module';
+import { DocsRoutingModule } from './pages/docs-routing.module';
 import { DocsTableComponent } from './pages/docs-table/docs-table.component';
 import { DocsService } from '../../core/services/http/docs.service';
 
@@ -25,7 +25,7 @@ import { DocsService } from '../../core/services/http/docs.service';
     LayoutsModule,
     MatTableModule,
     HttpClientModule,
-    PreviewerRoutingModule,
+    DocsRoutingModule,
     MarkdownModule.forRoot({ loader: HttpClient,  sanitize: SecurityContext.NONE }),
     MatPaginatorModule,
     MatSortModule

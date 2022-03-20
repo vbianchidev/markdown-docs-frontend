@@ -10,7 +10,7 @@
   >
     <mat-nav-list *ngIf="menus.length > 0">
 
-      <a mat-list-item [routerLink]="['/']"><mat-icon mat-list-icon>home</mat-icon> Homepage </a>
+      <a mat-list-item [routerLink]="['/docs']"><mat-icon mat-list-icon>home</mat-icon> Homepage </a>
 
       <a mat-list-item *ngFor="let menu of menus" [routerLink]="['/docs', menu.pageId]">
         <mat-icon mat-list-icon *ngIf="menu.matIcon !== null">
