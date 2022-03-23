@@ -32,7 +32,7 @@ export class SidenavComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
   ngAfterViewInit(): void {

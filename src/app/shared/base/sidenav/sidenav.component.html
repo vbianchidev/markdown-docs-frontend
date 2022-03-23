@@ -8,18 +8,19 @@
     [mode]="(this.isHandset) ? 'over' : 'side'"
     [opened]="(this.isHandset) === false"
   >
-    <mat-nav-list *ngIf="menus.length > 0">
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/']"><mat-icon mat-list-icon>home</mat-icon> Homepage </a>
 
-      <a mat-list-item [routerLink]="['/docs']"><mat-icon mat-list-icon>home</mat-icon> Homepage </a>
-
+      <a mat-list-item [routerLink]="['/docs']"><mat-icon mat-list-icon>description</mat-icon> Páginas </a>
+      
       <a mat-list-item *ngFor="let menu of menus" [routerLink]="['/docs', menu.pageId]">
         <mat-icon mat-list-icon *ngIf="menu.matIcon !== null">
           {{ menu.matIcon }}
         </mat-icon>
-        
         {{ menu.name }}
       </a>
     </mat-nav-list>
+    
   </mat-sidenav>
 
   <mat-sidenav-content>

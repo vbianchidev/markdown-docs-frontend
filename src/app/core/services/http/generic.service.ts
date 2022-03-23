@@ -14,8 +14,8 @@ export class GenericService<T> {
     return this._http.get<T>(this.api + id);
   }
 
-  public delete(id: string): void {
-    this._http.delete(this.api+id);
+  public delete(id: string) {
+    this._http.delete(this.api+id).subscribe(response => { console.log(response)});
   }
 
   public create(data: T): Observable<T> {
