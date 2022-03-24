@@ -4,7 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { Doc } from 'src/app/core/interfaces/docs.interface';
 
-import { DocsService } from '../../../../core/services/http/docs.service';
+import { DocsService } from '../../services/docs.service';
 import { ConfirmationDialogComponent } from '../../../../shared/components/confirmation-dialog/confirmation-dialog.component';
 
 @Component({

@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { LayoutsModule } from 'src/app/shared/layout/layout.module';
 
 import { HomeComponent } from './pages/home/home.component';
-import { HomepageRoutingModule } from './pages/homepage-routing.module';
+import { HomeRoutingModule } from './pages/homepage-routing.module';
 
 
 @NgModule({
@@ -15,7 +15,7 @@ import { HomepageRoutingModule } from './pages/homepage-routing.module';
     CommonModule,
     RouterModule,
     LayoutsModule,
-    HomepageRoutingModule
+    HomeRoutingModule
   ]
 })
-export class HomepageModule { }
+export class HomeModule { }

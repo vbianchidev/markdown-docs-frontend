@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Doc } from '../../interfaces/docs.interface';
-import { GenericService } from './generic.service';
+import { Doc } from '../../../core/interfaces/docs.interface';
+import { GenericService } from '../../../core/services/http/generic.service';
 
 
 @Injectable({

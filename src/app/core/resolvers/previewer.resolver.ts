@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Doc } from 'src/app/core/interfaces/docs.interface';
-import { DocsService } from 'src/app/core/services/http/docs.service';
+import { DocsService } from 'src/app/modules/page-module/services/docs.service';
 
 
 @Injectable({

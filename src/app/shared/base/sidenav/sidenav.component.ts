@@ -2,9 +2,10 @@ import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/cor
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { delay, startWith } from 'rxjs';
-import { Menu } from 'src/app/core/interfaces/menu.interface';
-import { MenuService } from 'src/app/core/services/http/menu.service';
+import { Doc } from 'src/app/core/interfaces/docs.interface';
 import { SidenavService } from 'src/app/core/services/ui/sidenav.service';
+import { DocsService } from 'src/app/modules/page-module/services/docs.service';
+
 
 @Component({
   selector: 'app-sidenav',
@@ -18,14 +19,14 @@ export class SidenavComponent implements OnInit, AfterViewInit {
   @ViewChild('drawer') 
   public drawer!: MatSidenav;
 
-  menus: Menu[] = [];
+  menus: Doc[] = [];
 
   constructor(
     private sidenavService: SidenavService,
-    private menuService: MenuService,
+    private docsService: DocsService,
     private router: Router
   ) {
-    this.menuService.getAll()
+    this.docsService.getAll()
       .subscribe(result => { 
         result.map(menu => this.menus.push(menu)) 
       });

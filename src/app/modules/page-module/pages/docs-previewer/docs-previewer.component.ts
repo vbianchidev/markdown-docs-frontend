@@ -17,16 +17,5 @@ export class DocsPreviewerComponent implements OnInit {
   ngOnInit(): void {
     const resolve = this.route.snapshot.data;
     this.document = resolve['previewer'];
-
-    console.log(this.document)
-
-    const text: string[] = this.document.markdown.split(/\r\n|\r|\n/);
-
-    text.map(item => {
-      if(item[0] == "#") this.anchors.push(item.replace(/[^\w\s]/gi, ""))
-    })
-
-    console.log(this.anchors)
-   
   }
 }

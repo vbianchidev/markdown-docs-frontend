@@ -3,7 +3,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Doc } from 'src/app/core/interfaces/docs.interface';
-import { DocsService } from 'src/app/core/services/http/docs.service';
+import { DocsService } from '../../services/docs.service';
+
 
 @Component({
   selector: 'app-docs-editor',
@@ -13,7 +14,7 @@ import { DocsService } from 'src/app/core/services/http/docs.service';
 export class DocsEditorComponent {
   docsForm = this.fb.group({
     title: [null, Validators.required],
-    markdown: [null, Validators.required]
+    content: [null, Validators.required]
   });
 
   constructor(
@@ -28,7 +29,7 @@ export class DocsEditorComponent {
     
     const doc: Doc = {
       title: this.docsForm.controls['title'].value,
-      markdown: this.docsForm.controls['markdown'].value,
+      content: this.docsForm.controls['content'].value,
     }
     
     this.docsService.create(doc)

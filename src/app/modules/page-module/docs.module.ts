@@ -4,7 +4,6 @@ import { NgModule, SecurityContext } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
@@ -19,11 +18,11 @@ import { MarkdownModule } from 'ngx-markdown';
 import { ComponentsModule } from 'src/app/shared/components/components.module';
 import { LayoutsModule } from 'src/app/shared/layout/layout.module';
 
-import { DocsService } from '../../core/services/http/docs.service';
 import { DocsEditorComponent } from './pages/docs-editor/docs-editor.component';
 import { DocsPreviewerComponent } from './pages/docs-previewer/docs-previewer.component';
 import { DocsRoutingModule } from './pages/docs-routing.module';
 import { DocsTableComponent } from './pages/docs-table/docs-table.component';
+import { DocsService } from './services/docs.service';
 
 
 @NgModule({
