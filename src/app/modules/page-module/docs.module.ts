@@ -18,11 +18,11 @@ import { MarkdownModule } from 'ngx-markdown';
 import { ComponentsModule } from 'src/app/shared/components/components.module';
 import { LayoutsModule } from 'src/app/shared/layout/layout.module';
 
-import { DocsEditorComponent } from './pages/docs-editor/docs-editor.component';
-import { DocsPreviewerComponent } from './pages/docs-previewer/docs-previewer.component';
+import { DocsEditorComponent } from './pages/pages-editor/pages-editor.component';
+import { DocsPreviewerComponent } from './pages/pages-previewer/pages-previewer.component';
 import { DocsRoutingModule } from './pages/docs-routing.module';
-import { DocsTableComponent } from './pages/docs-table/docs-table.component';
 import { DocsService } from './services/docs.service';
+import { DocsTableComponent } from './pages/pages-table/pages-table.component';
 
 
 @NgModule({

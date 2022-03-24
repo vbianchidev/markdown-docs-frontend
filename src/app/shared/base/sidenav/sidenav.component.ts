@@ -28,7 +28,7 @@ export class SidenavComponent implements OnInit, AfterViewInit {
   ) {
     this.docsService.getAll()
       .subscribe(result => { 
-        result.map(menu => this.menus.push(menu)) 
+        result.map(menu => { this.menus.push(menu); console.log(menu) }) 
       });
   }
 

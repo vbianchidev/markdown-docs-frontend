@@ -13,7 +13,7 @@
 
       <a mat-list-item [routerLink]="['/docs']"><mat-icon mat-list-icon>description</mat-icon> Páginas </a>
       
-      <a mat-list-item *ngFor="let menu of menus" [routerLink]="['/docs', menu.slug]">
+      <a mat-list-item *ngFor="let menu of menus" [routerLink]="['/docs', menu._id]">
         <mat-icon mat-list-icon *ngIf="menu.icon !== null">
           {{ menu.icon }}
         </mat-icon>

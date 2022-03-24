@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { PreviewerResolver } from '../../../core/resolvers/previewer.resolver';
-import { DocsEditorComponent } from './docs-editor/docs-editor.component';
-import { DocsPreviewerComponent } from './docs-previewer/docs-previewer.component';
-import { DocsTableComponent } from './docs-table/docs-table.component';
+import { DocsEditorComponent } from './pages-editor/pages-editor.component';
+import { DocsPreviewerComponent } from './pages-previewer/pages-previewer.component';
+import { DocsTableComponent } from './pages-table/pages-table.component';
 
 const routes: Routes = [
   {

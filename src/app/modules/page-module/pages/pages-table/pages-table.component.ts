@@ -8,9 +8,9 @@ import { DocsService } from '../../services/docs.service';
 import { ConfirmationDialogComponent } from '../../../../shared/components/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
-  selector: 'app-docs-table',
-  templateUrl: './docs-table.component.html',
-  styleUrls: ['./docs-table.component.scss']
+  selector: 'app-pages-table',
+  templateUrl: './pages-table.component.html',
+  styleUrls: ['./pages-table.component.scss']
 })
 export class DocsTableComponent implements OnInit {
   dataSource: Observable<Doc[]>;

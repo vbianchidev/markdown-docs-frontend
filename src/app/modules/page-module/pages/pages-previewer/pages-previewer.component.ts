@@ -3,9 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { Doc } from 'src/app/core/interfaces/docs.interface';
 
 @Component({
-  selector: 'app-previewer',
-  templateUrl: './docs-previewer.component.html',
-  styleUrls: ['./docs-previewer.component.scss']
+  selector: 'app-pages-previewer',
+  templateUrl: './pages-previewer.component.html',
+  styleUrls: ['./pages-previewer.component.scss']
 })
 export class DocsPreviewerComponent implements OnInit {
   

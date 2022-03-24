@@ -3,13 +3,14 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Doc } from 'src/app/core/interfaces/docs.interface';
+
 import { DocsService } from '../../services/docs.service';
 
 
 @Component({
-  selector: 'app-docs-editor',
-  templateUrl: './docs-editor.component.html',
-  styleUrls: ['./docs-editor.component.scss']
+  selector: 'app-pages-editor',
+  templateUrl: './pages-editor.component.html',
+  styleUrls: ['./pages-editor.component.scss']
 })
 export class DocsEditorComponent {
   docsForm = this.fb.group({
