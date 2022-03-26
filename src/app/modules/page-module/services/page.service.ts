@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { BASE_URL } from 'src/app/core/config/base.config';
+import { GenericService } from 'src/app/core/services/http/generic.service';
 
 import { Page } from '../interfaces/page.interface';
 
@@ -9,32 +10,30 @@ import { Page } from '../interfaces/page.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class PageService {
-  public api: string = BASE_URL + "page/";
+export class PageService extends GenericService<Page> {
+  public override api: string = BASE_URL + "page/";
 
   public refreshMenuEvent: BehaviorSubject<any> = new BehaviorSubject(null);
 
-  constructor(private _http: HttpClient) { }
-
-  public getAll(): Observable<Page[]> {
-    return this._http.get<Page[]>(this.api);
+  constructor(private http: HttpClient) { 
+    super(http);
   }
 
-  public getOne(id: string): Observable<Page> {
-    return this._http.get<Page>(this.api + id);
-  }
-
-  public delete(id: string) {
+  public override delete(id: string) {
+    this.http.delete(this.api+id).subscribe(response => { console.log(response)});
     this.refresh();
-    this._http.delete(this.api+id).subscribe(response => { console.log(response)});
   }
 
-  public create(data: Page): Observable<Page> {
-    return this._http.post<Page>(this.api, data)
+  public override create(data: Page): Observable<Page> {
+    const page = this.http.post<Page>(this.api, data);
+    this.refresh();
+    return page;
   }
 
-  public update(id: string, data: Page): Observable<Page>  {
-    return this._http.patch<Page>(this.api+id, data)
+  public override update(id: string, data: Page): Observable<Page>  {
+    const page = this.http.patch<Page>(this.api+id, data);
+    this.refresh();
+    return page;
   }
 
   public refresh() {

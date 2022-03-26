@@ -18,11 +18,11 @@ import { MarkdownModule } from 'ngx-markdown';
 import { ComponentsModule } from 'src/app/shared/components/components.module';
 import { LayoutsModule } from 'src/app/shared/layout/layout.module';
 
+import { DocsRoutingModule } from './pages/docs-routing.module';
 import { DocsEditorComponent } from './pages/pages-editor/pages-editor.component';
 import { DocsPreviewerComponent } from './pages/pages-previewer/pages-previewer.component';
-import { DocsRoutingModule } from './pages/docs-routing.module';
-import { PageService } from './services/page.service';
 import { DocsTableComponent } from './pages/pages-table/pages-table.component';
+import { PageService } from './services/page.service';
 
 
 @NgModule({
@@ -32,6 +32,10 @@ import { DocsTableComponent } from './pages/pages-table/pages-table.component';
     DocsTableComponent,
   ],
   imports: [
+    MarkdownModule.forRoot({ 
+      loader: HttpClient,  
+      sanitize: SecurityContext.NONE
+    }),
     CommonModule,
     ComponentsModule,
     RouterModule,
@@ -44,7 +48,6 @@ import { DocsTableComponent } from './pages/pages-table/pages-table.component';
     MatButtonModule,
     HttpClientModule,
     DocsRoutingModule,
-    MarkdownModule.forRoot({ loader: HttpClient,  sanitize: SecurityContext.NONE }),
     MatPaginatorModule,
     MatSortModule,
     MatInputModule,

@@ -1,11 +1,10 @@
 <div class="preview-body">
   <div class="navigation">
     <mat-nav-list>
-      <a mat-list-item *ngFor="let anchor of anchors">{{ anchor }}</a>
+      <a mat-list-item *ngFor="let anchor of anchors" (click)="scrollTo(anchor)">{{ anchor }}</a>
     </mat-nav-list>
   </div>
 
-  <markdown 
-    [data]="document?.content">
+  <markdown [data]="page?.content">
   </markdown>
 </div>
