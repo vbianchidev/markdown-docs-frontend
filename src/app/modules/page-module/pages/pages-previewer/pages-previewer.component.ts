@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MarkdownService } from 'ngx-markdown';
-import { Doc } from 'src/app/core/interfaces/docs.interface';
+import { Page } from 'src/app/modules/page-module/interfaces/page.interface';
 
 @Component({
   selector: 'app-pages-previewer',
@@ -10,7 +10,7 @@ import { Doc } from 'src/app/core/interfaces/docs.interface';
 })
 export class DocsPreviewerComponent implements OnInit {
   
-  document?: Doc;
+  document?: Page;
   anchors: string[] = [];
 
   constructor(

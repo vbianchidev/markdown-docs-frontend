@@ -1,3 +1,3 @@
-export const makeUrlId = (url: string, id: number | string) => {
+export const makeUrlId = (url: string, id: string) => {
   return `${url}/${id}`;
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PreviewerResolver } from '../../../core/resolvers/previewer.resolver';
+import { PageResolver } from '../resolvers/page.resolver';
 import { DocsEditorComponent } from './pages-editor/pages-editor.component';
 import { DocsPreviewerComponent } from './pages-previewer/pages-previewer.component';
 import { DocsTableComponent } from './pages-table/pages-table.component';
@@ -18,13 +18,13 @@ const routes: Routes = [
     runGuardsAndResolvers: "pathParamsOrQueryParamsChange",
     component: DocsPreviewerComponent,
     resolve: {
-      previewer: PreviewerResolver
+      previewer: PageResolver
     }
   }, {
     path: 'editar/:slug', 
     component: DocsEditorComponent,
     resolve: {
-      previewer: PreviewerResolver
+      previewer: PageResolver
     }
   },
 ];

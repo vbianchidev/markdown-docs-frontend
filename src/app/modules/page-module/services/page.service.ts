@@ -3,25 +3,25 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { BASE_URL } from 'src/app/core/config/base.config';
 
-import { Doc } from '../../../core/interfaces/docs.interface';
+import { Page } from '../interfaces/page.interface';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class DocsService {
+export class PageService {
   public api: string = BASE_URL + "page/";
 
   public refreshMenuEvent: BehaviorSubject<any> = new BehaviorSubject(null);
 
   constructor(private _http: HttpClient) { }
 
-  public getAll(): Observable<Doc[]> {
-    return this._http.get<Doc[]>(this.api);
+  public getAll(): Observable<Page[]> {
+    return this._http.get<Page[]>(this.api);
   }
 
-  public getOne(id: string): Observable<Doc> {
-    return this._http.get<Doc>(this.api + id);
+  public getOne(id: string): Observable<Page> {
+    return this._http.get<Page>(this.api + id);
   }
 
   public delete(id: string) {
@@ -29,12 +29,12 @@ export class DocsService {
     this._http.delete(this.api+id).subscribe(response => { console.log(response)});
   }
 
-  public create(data: Doc): Observable<Doc> {
-    return this._http.post<Doc>(this.api, data)
+  public create(data: Page): Observable<Page> {
+    return this._http.post<Page>(this.api, data)
   }
 
-  public update(id: string, data: Doc): Observable<Doc>  {
-    return this._http.patch<Doc>(this.api+id, data)
+  public update(id: string, data: Page): Observable<Page>  {
+    return this._http.patch<Page>(this.api+id, data)
   }
 
   public refresh() {

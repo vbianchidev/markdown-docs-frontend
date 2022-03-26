@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { Doc } from 'src/app/core/interfaces/docs.interface';
+import { Page } from 'src/app/modules/page-module/interfaces/page.interface';
 
-import { DocsService } from '../../services/docs.service';
+import { PageService } from '../../services/page.service';
 
 
 @Component({
@@ -20,7 +20,7 @@ export class DocsEditorComponent {
 
   constructor(
     private router: Router,
-    private docsService: DocsService,
+    private docsService: PageService,
     private snackBar: MatSnackBar,
     private fb: FormBuilder
   ) { }
@@ -28,7 +28,7 @@ export class DocsEditorComponent {
   onSubmit(): void {
     if(!this.docsForm.valid) return;
     
-    const doc: Doc = {
+    const doc: Page = {
       title: this.docsForm.controls['title'].value,
       content: this.docsForm.controls['content'].value,
     }

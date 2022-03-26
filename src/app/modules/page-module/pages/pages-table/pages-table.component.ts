@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
-import { Doc } from 'src/app/core/interfaces/docs.interface';
+import { Page } from 'src/app/modules/page-module/interfaces/page.interface';
 
-import { DocsService } from '../../services/docs.service';
+import { PageService } from '../../services/page.service';
 import { ConfirmationDialogComponent } from '../../../../shared/components/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
@@ -13,14 +13,14 @@ import { ConfirmationDialogComponent } from '../../../../shared/components/confi
   styleUrls: ['./pages-table.component.scss']
 })
 export class DocsTableComponent implements OnInit {
-  dataSource: Observable<Doc[]>;
+  dataSource: Observable<Page[]>;
   
   displayedColumns: string[] = [
     "_id", "title", "slug", "createdAt", "updatedAt"
   ];
 
   constructor(
-    public docsService: DocsService,
+    public docsService: PageService,
     private dialog: MatDialog,
     private snackBar: MatSnackBar
   ) {}

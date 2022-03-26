@@ -21,7 +21,7 @@ import { LayoutsModule } from 'src/app/shared/layout/layout.module';
 import { DocsEditorComponent } from './pages/pages-editor/pages-editor.component';
 import { DocsPreviewerComponent } from './pages/pages-previewer/pages-previewer.component';
 import { DocsRoutingModule } from './pages/docs-routing.module';
-import { DocsService } from './services/docs.service';
+import { PageService } from './services/page.service';
 import { DocsTableComponent } from './pages/pages-table/pages-table.component';
 
 
@@ -54,7 +54,7 @@ import { DocsTableComponent } from './pages/pages-table/pages-table.component';
     ReactiveFormsModule
   ],
   providers: [
-    DocsService
+    PageService
   ]
 })
-export class DocsModule { }
+export class PageModule { }

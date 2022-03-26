@@ -1,6 +1,6 @@
-import { BaseInterface } from "./base.interface";
+import { BaseInterface } from "../../../core/interfaces/base.interface";
 
-export interface Doc extends BaseInterface {
+export interface Page extends BaseInterface {
   icon?: string | null;
   cover?: string | null;
   title: string;
