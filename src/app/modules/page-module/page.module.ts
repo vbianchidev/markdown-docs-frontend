@@ -14,7 +14,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule } from '@angular/router';
-import { MarkdownModule } from 'ngx-markdown';
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
+import { markedOptionsFactory } from 'src/app/core/config/markedjs.config';
 import { ComponentsModule } from 'src/app/shared/components/components.module';
 import { LayoutsModule } from 'src/app/shared/layout/layout.module';
 
@@ -24,7 +25,6 @@ import { DocsPreviewerComponent } from './pages/pages-previewer/pages-previewer.
 import { DocsTableComponent } from './pages/pages-table/pages-table.component';
 import { PageService } from './services/page.service';
 
-
 @NgModule({
   declarations: [
     DocsPreviewerComponent,
@@ -33,8 +33,12 @@ import { PageService } from './services/page.service';
   ],
   imports: [
     MarkdownModule.forRoot({ 
-      loader: HttpClient,  
-      sanitize: SecurityContext.NONE
+      loader: HttpClient,
+      sanitize: SecurityContext.NONE,
+      markedOptions: {
+        provide: MarkedOptions,
+        useFactory: markedOptionsFactory,
+      },
     }),
     CommonModule,
     ComponentsModule,

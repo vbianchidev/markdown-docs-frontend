@@ -6,15 +6,15 @@
   .preview-body{
     display: flex;
     flex-direction: row;
-    width: 90%;
+    width: 80%;
     
     .navigation {
-      width: 30%;
+      width: 25%;
       padding: 16px;
     }
   
     markdown {
-      width: 70%;
+      width: 75%;
       padding: 16px;
     }
   }
