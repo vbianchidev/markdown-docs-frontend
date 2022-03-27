@@ -1,21 +1,29 @@
 :host {
   display: flex;
+  margin-top: 16px;
   flex-direction: column;
   align-items: center;
 
   .preview-body{
-    display: flex;
-    flex-direction: row;
     width: 80%;
+    display: grid; 
+    grid-template-columns: 1fr 3fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "sidenav content"; 
     
     .navigation {
-      width: 25%;
+      grid-area: sidenav;
       padding: 16px;
+      position: fixed;
+      max-width: 282px;
     }
   
     markdown {
-      width: 75%;
+      grid-area: content;
       padding: 16px;
+      overflow: auto;
     }
   }
   

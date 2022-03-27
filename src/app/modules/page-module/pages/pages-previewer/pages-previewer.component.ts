@@ -1,12 +1,8 @@
-import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MarkdownService, MarkedRenderer } from 'ngx-markdown';
 import { REGEX } from 'src/app/core/helpers/regex.helper';
 import { textSlugfy } from 'src/app/core/helpers/string.helpers';
 import { Page } from 'src/app/modules/page-module/interfaces/page.interface';
-import { marked } from 'marked';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-pages-previewer',
@@ -17,10 +13,7 @@ export class DocsPreviewerComponent implements OnInit {
   page?: Page;
   anchors: string[] = [];
 
-  constructor(
-    private route: ActivatedRoute,
-    private viewportScroller: ViewportScroller
-  ) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const resolve = this.route.snapshot.data;
@@ -35,8 +28,8 @@ export class DocsPreviewerComponent implements OnInit {
     );
   }
 
-  scrollTo(anchor: string): void {
-    console.log(textSlugfy(anchor))
-    this.viewportScroller.scrollToAnchor(textSlugfy(anchor));
+  scrollTo(id: string): void {
+    const element = document.getElementById(textSlugfy(id));
+    element.scrollIntoView({ behavior: "smooth", block: 'start', inline: 'start' });
   }
 }

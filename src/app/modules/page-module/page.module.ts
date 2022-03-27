@@ -12,6 +12,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSortModule } from '@angular/material/sort';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule } from '@angular/router';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
@@ -43,22 +44,23 @@ import { PageService } from './services/page.service';
     CommonModule,
     ComponentsModule,
     RouterModule,
-    MatListModule,
-    MatSnackBarModule,
     LayoutsModule,
-    MatCardModule,
-    MatTableModule,
-    MatIconModule,
-    MatButtonModule,
     HttpClientModule,
     DocsRoutingModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatInputModule,
-    MatSelectModule,
-    MatRadioModule,
+    ReactiveFormsModule,
+    MatListModule,
     MatCardModule,
-    ReactiveFormsModule
+    MatIconModule,
+    MatSortModule,
+    MatTableModule,
+    MatInputModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    MatGridListModule,
+    MatPaginatorModule,
+
   ],
   providers: [
     PageService
