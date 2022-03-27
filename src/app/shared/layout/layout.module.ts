@@ -14,7 +14,6 @@ import { RouterModule } from '@angular/router';
 import { BaseModule } from '../base/base.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-
 @NgModule({
   declarations: [DashboardComponent],
   imports: [
@@ -34,4 +33,4 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   exports: [DashboardComponent]
 })
-export class LayoutsModule { }
+export class LayoutsModule {}

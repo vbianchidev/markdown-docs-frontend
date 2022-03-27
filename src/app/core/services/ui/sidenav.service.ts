@@ -9,5 +9,5 @@ export class SidenavService {
 
   public toggle() {
     return this.sidenavToggleSubject.next(null);
-  } 
+  }
 }

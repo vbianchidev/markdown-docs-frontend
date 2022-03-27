@@ -1,4 +1,4 @@
-import { BaseInterface } from "../../../core/interfaces/base.interface";
+import { BaseInterface } from '../../../core/interfaces/base.interface';
 
 export interface Page extends BaseInterface {
   icon?: string | null;
@@ -6,7 +6,7 @@ export interface Page extends BaseInterface {
   title: string;
   slug?: string;
   content: string;
-  pages?: Array<string> | null ;
-  author?:  string ;
+  pages?: Array<string> | null;
+  author?: string;
   parentPage?: string | null;
 }

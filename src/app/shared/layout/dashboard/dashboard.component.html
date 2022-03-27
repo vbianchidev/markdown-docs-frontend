@@ -1,15 +1,10 @@
 <!-- Menu -->
-<app-sidenav
-  [isHandset]="isHandset$ | async">
-  
+<app-sidenav [isHandset]="isHandset$ | async">
   <!-- Toolbar -->
-  <app-toolbar
-    [isHandset]="isHandset$ | async">
-  </app-toolbar>
-  
+  <app-toolbar [isHandset]="isHandset$ | async"> </app-toolbar>
+
   <!-- Main content -->
   <div class="main-content">
     <router-outlet></router-outlet>
   </div>
-  
 </app-sidenav>

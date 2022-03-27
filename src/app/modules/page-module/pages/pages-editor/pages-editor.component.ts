@@ -6,7 +6,6 @@ import { Page } from 'src/app/modules/page-module/interfaces/page.interface';
 
 import { PageService } from '../../services/page.service';
 
-
 @Component({
   selector: 'app-pages-editor',
   templateUrl: './pages-editor.component.html',
@@ -23,23 +22,22 @@ export class DocsEditorComponent {
     private docsService: PageService,
     private snackBar: MatSnackBar,
     private fb: FormBuilder
-  ) { }
+  ) {}
 
   onSubmit(): void {
-    if(!this.docsForm.valid) return;
-    
+    if (!this.docsForm.valid) return;
+
     const doc: Page = {
       title: this.docsForm.controls['title'].value,
-      content: this.docsForm.controls['content'].value,
-    }
-    
-    this.docsService.create(doc)
-      .subscribe(response => { 
-        this.snackBar.open(`Página ${response.title} criado!`, 'Fechar', {
-          duration: 3000,
-        });
+      content: this.docsForm.controls['content'].value
+    };
 
-        this.router.navigate(['/docs']);
+    this.docsService.create(doc).subscribe((response) => {
+      this.snackBar.open(`Página ${response.title} criado!`, 'Fechar', {
+        duration: 3000
       });
+
+      this.router.navigate(['/docs']);
+    });
   }
 }

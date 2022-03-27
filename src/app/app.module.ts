@@ -3,27 +3,24 @@ import { NgModule, SecurityContext } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MarkdownModule, MarkedOptions, MarkedRenderer } from 'ngx-markdown';
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { markedOptionsFactory } from './core/config/markedjs.config';
-import { textSlugfy } from './core/helpers/string.helpers';
 import { ModulesModule } from './modules/modules.module';
 import { LayoutsModule } from './shared/layout/layout.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
-    MarkdownModule.forRoot({ 
+    MarkdownModule.forRoot({
       loader: HttpClient,
       sanitize: SecurityContext.NONE,
       markedOptions: {
         provide: MarkedOptions,
-        useFactory: markedOptionsFactory,
-      },
+        useFactory: markedOptionsFactory
+      }
     }),
     BrowserModule,
     LayoutsModule,
@@ -35,4 +32,4 @@ import { LayoutsModule } from './shared/layout/layout.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

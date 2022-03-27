@@ -8,4 +8,4 @@ import { Component } from '@angular/core';
     </app-dashboard>
   `
 })
-export class AppComponent { }
+export class AppComponent {}

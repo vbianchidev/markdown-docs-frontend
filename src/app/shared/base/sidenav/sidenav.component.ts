@@ -1,11 +1,16 @@
-import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  OnInit,
+  ViewChild
+} from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { delay, Observable, startWith } from 'rxjs';
 import { Page } from 'src/app/modules/page-module/interfaces/page.interface';
 import { SidenavService } from 'src/app/core/services/ui/sidenav.service';
 import { PageService } from 'src/app/modules/page-module/services/page.service';
-
 
 @Component({
   selector: 'app-sidenav',
@@ -16,7 +21,7 @@ export class SidenavComponent implements OnInit, AfterViewInit {
   @Input()
   isHandset: boolean;
 
-  @ViewChild('drawer') 
+  @ViewChild('drawer')
   public drawer!: MatSidenav;
 
   menus: Observable<Page[]>;
@@ -35,20 +40,14 @@ export class SidenavComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.sidenavService.sidenavToggleSubject
-      .pipe(
-        startWith(null),
-        delay(0)
-      )
-      .subscribe(()=> {
+      .pipe(startWith(null), delay(0))
+      .subscribe(() => {
         this.drawer.toggle();
       });
-    
+
     this.docsService.refreshMenuEvent
-      .pipe(
-        startWith(null),
-        delay(0)
-      )
-      .subscribe(()=> {
+      .pipe(startWith(null), delay(0))
+      .subscribe(() => {
         this.menus = this.docsService.getAll();
       });
   }

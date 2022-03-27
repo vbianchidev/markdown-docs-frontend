@@ -6,10 +6,6 @@ import { PageModule } from './page-module/page.module';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    PageModule, 
-    HomeModule
-  ]
+  imports: [CommonModule, PageModule, HomeModule]
 })
-export class ModulesModule { }
+export class ModulesModule {}

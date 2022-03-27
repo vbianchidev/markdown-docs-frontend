@@ -12,7 +12,7 @@ export class ToolbarComponent {
 
   constructor(private sideNavService: SidenavService) {}
 
-  toogleSidenav() { 
+  toogleSidenav() {
     this.sideNavService.toggle();
   }
 }

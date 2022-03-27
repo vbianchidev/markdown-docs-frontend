@@ -8,29 +8,32 @@ import { DocsTableComponent } from './pages-table/pages-table.component';
 
 const routes: Routes = [
   {
-    path: '', 
-    component: DocsTableComponent,
-  }, {
-    path: 'novo', 
+    path: '',
+    component: DocsTableComponent
+  },
+  {
+    path: 'novo',
     component: DocsEditorComponent
-  }, { 
-    path: ':slug', 
-    runGuardsAndResolvers: "pathParamsOrQueryParamsChange",
+  },
+  {
+    path: ':slug',
+    runGuardsAndResolvers: 'pathParamsOrQueryParamsChange',
     component: DocsPreviewerComponent,
     resolve: {
       previewer: PageResolver
     }
-  }, {
-    path: 'editar/:slug', 
+  },
+  {
+    path: 'editar/:slug',
     component: DocsEditorComponent,
     resolve: {
       previewer: PageResolver
     }
-  },
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DocsRoutingModule { }
+export class DocsRoutingModule {}

@@ -30,16 +30,16 @@ import { PageService } from './services/page.service';
   declarations: [
     DocsPreviewerComponent,
     DocsEditorComponent,
-    DocsTableComponent,
+    DocsTableComponent
   ],
   imports: [
-    MarkdownModule.forRoot({ 
+    MarkdownModule.forRoot({
       loader: HttpClient,
       sanitize: SecurityContext.NONE,
       markedOptions: {
         provide: MarkedOptions,
-        useFactory: markedOptionsFactory,
-      },
+        useFactory: markedOptionsFactory
+      }
     }),
     CommonModule,
     ComponentsModule,
@@ -59,11 +59,8 @@ import { PageService } from './services/page.service';
     MatButtonModule,
     MatSnackBarModule,
     MatGridListModule,
-    MatPaginatorModule,
-
+    MatPaginatorModule
   ],
-  providers: [
-    PageService
-  ]
+  providers: [PageService]
 })
-export class PageModule { }
+export class PageModule {}

@@ -14,9 +14,13 @@ import { ConfirmationDialogComponent } from '../../../../shared/components/confi
 })
 export class DocsTableComponent implements OnInit {
   dataSource: Observable<Page[]>;
-  
+
   displayedColumns: string[] = [
-    "_id", "title", "slug", "createdAt", "updatedAt"
+    '_id',
+    'title',
+    'slug',
+    'createdAt',
+    'updatedAt'
   ];
 
   constructor(
@@ -35,7 +39,7 @@ export class DocsTableComponent implements OnInit {
 
   openDeleteDialog(id: string) {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-      data:{
+      data: {
         message: 'Você deseja realmente excluir este item?',
         buttonText: {
           ok: 'Confirmar',
@@ -44,16 +48,15 @@ export class DocsTableComponent implements OnInit {
       }
     });
 
-    dialogRef.afterClosed()
-      .subscribe((confirmed: boolean) => {
-        if (confirmed) {
-          this.onDelete(id);
-          this.refresh();
-          this.snackBar.open('Registro Excluido!', 'Fechar', {
-            duration: 2000,
-          });
-        }
-      });
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        this.onDelete(id);
+        this.refresh();
+        this.snackBar.open('Registro Excluido!', 'Fechar', {
+          duration: 2000
+        });
+      }
+    });
   }
 
   onDelete(id: string): void {

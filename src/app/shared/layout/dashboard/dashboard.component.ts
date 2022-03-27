@@ -8,11 +8,12 @@ import { map, Observable, shareReplay } from 'rxjs';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe(Breakpoints.Handset)
     .pipe(
-      map(result => result.matches),
+      map((result) => result.matches),
       shareReplay()
     );
-  
-  constructor(private breakpointObserver: BreakpointObserver) { }
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
 }

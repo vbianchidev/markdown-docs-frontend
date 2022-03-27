@@ -15,12 +15,8 @@ import { SidenavService } from 'src/app/core/services/ui/sidenav.service';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
-
 @NgModule({
-  declarations: [
-    SidenavComponent, 
-    ToolbarComponent
-  ],
+  declarations: [SidenavComponent, ToolbarComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -33,13 +29,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule
-  ], 
-  exports: [
-    SidenavComponent,
-    ToolbarComponent
-  ], 
-  providers:[
-    SidenavService
-  ]
+  ],
+  exports: [SidenavComponent, ToolbarComponent],
+  providers: [SidenavService]
 })
-export class BaseModule { }
+export class BaseModule {}

@@ -11,8 +11,6 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ComponentsModule } from './components/components.module';
 
-
-
 @NgModule({
   declarations: [],
   imports: [
@@ -28,4 +26,4 @@ import { ComponentsModule } from './components/components.module';
     ReactiveFormsModule
   ]
 })
-export class SharedModule { }
+export class SharedModule {}
