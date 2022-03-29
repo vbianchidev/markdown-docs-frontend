@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule, SecurityContext } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -25,6 +25,7 @@ import { DocsEditorComponent } from './pages/pages-editor/pages-editor.component
 import { DocsPreviewerComponent } from './pages/pages-previewer/pages-previewer.component';
 import { DocsTableComponent } from './pages/pages-table/pages-table.component';
 import { PageService } from './services/page.service';
+import { LMarkdownEditorModule } from 'ngx-markdown-editor';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,8 @@ import { PageService } from './services/page.service';
     HttpClientModule,
     DocsRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
+    LMarkdownEditorModule,
     MatListModule,
     MatCardModule,
     MatIconModule,

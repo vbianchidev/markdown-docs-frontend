@@ -6,13 +6,21 @@
         <input matInput placeholder="Titulo" formControlName="title" />
       </mat-form-field>
 
-      <mat-form-field class="full-width">
+      <!-- <mat-form-field class="full-width">
         <textarea
           matInput
           placeholder="Conteúdo"
           formControlName="content"
         ></textarea>
-      </mat-form-field>
+      </mat-form-field> -->
+      <md-editor
+        name="Content" 
+        [(ngModel)]="content" 
+        [height]="'500px'" 
+        [mode]="'editor'" 
+        [options]="options" 
+        required >
+      </md-editor>
     </mat-card-content>
 
     <mat-card-actions>

@@ -18,10 +18,10 @@ export class DocsPreviewerComponent implements OnInit {
   ngOnInit(): void {
     const resolve = this.route.snapshot.data;
     this.page = resolve['previewer'];
-    this.generateHeaders();
+    this.generateHeadings();
   }
 
-  generateHeaders(): void {
+  generateHeadings(): void {
     const headers = this.page.content.match(REGEX.HEADING);
     headers.map((head) =>
       this.anchors.push(head.replace(REGEX.HEADING_TEXT, ''))

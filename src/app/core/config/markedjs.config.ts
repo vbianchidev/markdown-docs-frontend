@@ -6,17 +6,11 @@ export function markedOptionsFactory(): MarkedOptions {
 
   renderer.heading = (text: string, level: number): string => {
     const id = textSlugfy(text);
-    return (
-      '<h' +
-      level +
-      ' id="' +
-      id +
-      '" class="heading"> ' +
-      text +
-      ' </h' +
-      level +
-      '>'
-    );
+    return (`
+      <h${level} id="${id}" class="heading-${level}">
+        ${text}
+      </h${level}>
+    `);
   };
 
   return {

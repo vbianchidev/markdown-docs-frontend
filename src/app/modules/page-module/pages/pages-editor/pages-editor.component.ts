@@ -12,6 +12,18 @@ import { PageService } from '../../services/page.service';
   styleUrls: ['./pages-editor.component.scss']
 })
 export class DocsEditorComponent {
+  content: string = "";
+
+  options: any = {  
+    showPreviewPanel: true,
+    showBorder: false,
+    hideIcons: ['FullScreen'],
+    usingFontAwesome5: true,
+    scrollPastEnd: 0,
+    enablePreviewContentClick: true,
+    resizable: false
+  }
+
   docsForm = this.fb.group({
     title: [null, Validators.required],
     content: [null, Validators.required]
